@@ -11,7 +11,7 @@ def create_app(env=None):
     from app.routes import register_routes
 
     app = Flask(__name__)
-    app.config.from_object(config_by_name[env or "dev"])
+    app.config.from_object(config_by_name[env or "test"])
     api = Api(app)
 
     register_routes(api, app)
